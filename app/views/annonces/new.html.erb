@@ -1,0 +1,28 @@
+<h1>Nouvelle Annonce</h1>
+<% if @annonce.errors.any? %>
+    <div class="alert alert-danger">
+        <%@annonce.errors.full_messages.each do |message|%>
+        <li><%= message %></li>
+<% end %>
+</div>
+<% end %>
+<%= form_for @annonce do |f|%>
+    <div class="form-group">
+        <label>Titre de votre annonce </label>
+        <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <label>Description </label>
+        <%= f.text_area :description, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <label>Prix </label>
+        <%= f.text_field :prix, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Mettre en vente</button>
+    </div>
+<% end %>
