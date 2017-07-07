@@ -10,9 +10,11 @@
 
 <%= form_for @user, url: profil_path, class: 'form-horizontal' do |f|%>
 
-
+    <% if @user.avatar %>
+      <%= image_tag @user.avatar_url %>
+    <% end %>
     <div class="form-group">
-      <%=	f.label :avatar, "Avatar", class: 'col-md-4 control label' %>
+      <%=	f.label :avatar_file, "Avatar", class: 'col-md-4 control label' %>
       <div class="col-md-6">
         <%=	f.file_field :avatar_file, class: 'form-control' %>
       </div>
@@ -49,7 +51,7 @@
 
     <div class="form-group">
       <div class="col-md-6">
-        <button type="submit" class="btn btn-primary">S'inscrire</button>
+        <button type="submit" class="btn btn-primary">Modifier le profil</button>
       </div>
     </div>
 
