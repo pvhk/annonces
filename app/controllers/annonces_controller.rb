@@ -5,7 +5,7 @@ class AnnoncesController < ApplicationController
   # GET /annonces.json
   skip_before_action :only_signed_in, only: [:index, :show]
   def index
-    
+
     @annonces = Annonce.all
   end
 
@@ -27,7 +27,7 @@ class AnnoncesController < ApplicationController
   # POST /annonces.json
   def create
     @annonce = Annonce.new(annonce_params)
-
+    @annonce.user_id = current_user.id
     respond_to do |format|
       if @annonce.save
         format.html { redirect_to @annonce, notice: 'Annonce was successfully created.' }

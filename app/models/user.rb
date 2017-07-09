@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-
+  has_many :annonces
   attr_accessor :avatar_file
   has_secure_password
   has_secure_token :confirmation_token
@@ -14,7 +14,6 @@ class User < ApplicationRecord
   uniqueness: {case_sensitive: false}
   validates :email, format:{with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: 'invalide'},
   uniqueness: {case_sensitive: false}
-
 
   def to_session
     {id: id}

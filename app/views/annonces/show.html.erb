@@ -1,10 +1,20 @@
 <a href="<%=annonces_path%>" class="btn btn-primary">Retour</a>
+<% if current_user %>
+<% if current_user.id == @annonce.user.id %>
 <a href="<%=edit_annonce_path%>" class="btn btn-info">Editer</a>
 <a href="<%= annonce_path(@annonce.id) %>" class="btn btn-danger" data-confirm="etes vous sur ? " data-method="DELETE">Supprimer</a>
+<% end %>
+<% end %>
 
-    
-    <h1><%= @annonce.name %></h1>
-    <p><%= @annonce.description %></p>
-    <p><%= @annonce.prix %></p>
+<h1><%= @annonce.name %></h1>
+<p>
+  <b><%= @annonce.user.username %></b>
+</p>
+<% if @annonce.user.avatar %>
+<div class="img_profil">
+  <%= image_tag @annonce.user.avatar_url %>
+</div>
 
-
+<% end %>
+<p><%= @annonce.description %></p>
+<p><%= @annonce.prix %></p>

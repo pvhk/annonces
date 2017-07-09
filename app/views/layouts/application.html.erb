@@ -36,6 +36,7 @@
               </a>
               <ul class="dropdown-menu" role="menu">
                 <li class="nav-link"> <%= link_to 'Mon profil', profil_path %></li>
+                <li class="nav-link"> <%= link_to 'Mes annonces', profil_mesannonces_path %></li>
                 <li class="nav-link"> <%= link_to 'Se deconnecter', destroy_session_path, data: {method: :delete} %></li>
               </ul>
             </li>
@@ -49,7 +50,7 @@
       </div>
     </header>
     <body>
-    
+
      <div class = "container" style="padding-top:5rem;">
        <% if flash[:success]%>
            <div class="alert alert-success">

@@ -1,7 +1,9 @@
 class Annonce < ApplicationRecord
+  belongs_to :user
+
     validate :validation_method
     validates :prix,presence: true, format: {with: /([0-9])\w+/}
-    
+
     def validation_method
         if name.length < 4
             errors.add(:name, :inferior_4, { message:'Il faut que la longeur du nom soit superieur à 4 !'})

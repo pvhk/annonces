@@ -46,4 +46,9 @@
 
    end
 
+   def all_annonce
+     @user = current_user
+     @annonces = @user.annonces
+   end
+
  end

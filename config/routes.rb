@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/profil', to: 'users#edit', as: :profil
   patch '/profil', to: 'users#update'
 
+  get '/profil/mesannonces', to: 'users#all_annonce'
+
   get '/login', to: 'sessions#new', as: :new_session
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy', as: :destroy_session
