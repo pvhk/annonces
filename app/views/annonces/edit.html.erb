@@ -11,15 +11,22 @@
         <label>Titre de l'article </label>
         <%= f.text_field :name, class: 'form-control' %>
     </div>
-    
+
     <div class="form-group">
         <label> Contenu de l'article </label>
         <%= f.text_area :description, class: 'form-control' %>
     </div>
-    
+
     <div class="form-group">
         <label>Prix</label>
         <%= f.text_field :prix, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%=	f.label :picture_file, "Image", class: 'col-md-4 control label' %>
+      <div class="col-md-6">
+        <%=	f.file_field :picture_file, class: 'form-control' %>
+      </div>
     </div>
 
     <div class="form-group">

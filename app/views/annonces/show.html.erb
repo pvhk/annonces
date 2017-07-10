@@ -16,5 +16,11 @@
 </div>
 
 <% end %>
+
+<% if @annonce.picture %>
+<div class="card-img-top">
+  <%= image_tag @annonce.picture_url %>
+</div>
+<% end %>
 <p><%= @annonce.description %></p>
 <p><%= @annonce.prix %></p>

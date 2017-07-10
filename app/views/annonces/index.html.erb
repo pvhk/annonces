@@ -4,10 +4,12 @@
 
 <div class ="container">
 <div class ="row">
-    <% @annonces.each do |annonce| %>
+    <% @annonces.reverse.each do |annonce| %>
       <div class="card-deck col-sm-12 col-xs-12 col-md-4 col-lg-4" style="margin-bottom:20px;">
         <div class="p-2 card ">
-          <img class="card-img-top" src="<%= image_url('table.jpg') %>" alt="Card image cap">
+
+
+            <%= image_tag annonce.picture_url, class: "card-img-top" %>
           <div class="card-block">
             <h2 class="card-title"><%=annonce.name%></h2>
             <p class="card-text"><%=annonce.description%></p>

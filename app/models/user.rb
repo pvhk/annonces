@@ -8,12 +8,12 @@ class User < ApplicationRecord
   after_destroy :avatar_destroy
   before_save :avatar_before_upload
 
-  validates :avatar_file, file: {ext:[:jpg, :png]}
 
   validates :username, format: {with: /\A[a-zA-Z0-9_]{2,20}\z/, message: 'ne doit contenir que des caractères alphanumérique ou des underscores'},
   uniqueness: {case_sensitive: false}
   validates :email, format:{with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: 'invalide'},
   uniqueness: {case_sensitive: false}
+  validates :avatar_file, file: {ext: [:jpg, :png], allow_blank: true}
 
   def to_session
     {id: id}
