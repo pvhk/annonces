@@ -1,1 +1,2 @@
-Voila mon premier projet, c'est une application de petites annonces que je vais améliorer au fur et à mesure de mon apprentissage du framework "Ruby on rails", je vais aussi y ajouter du js quand je vais approfondir ce language
+Premier projet RoR.</br>
+Work In Progress
