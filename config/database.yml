@@ -51,5 +51,7 @@ test:
 production:
   <<: *default
   database: annonces_production
+  adapter: postgresql
   username: annonces
   password: <%= ENV['ANNONCES_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
