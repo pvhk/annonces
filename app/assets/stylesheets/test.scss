@@ -1,0 +1,69 @@
+//slider
+
+
+body{
+  margin:0;
+  padding:0;
+}
+.imgprofil{
+  height: 100px;
+  width: 200px;
+  overflow: hidden;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+.profilvendeur{
+  margin-top: 30px;
+}
+.titleannonceshow{
+  margin-top: 50px;
+}
+.card > img{
+    width:80%;
+    height:200px;
+    margin: 0 auto;
+}
+
+.img_profil > img{
+  width: 200px;
+  height: 200px;
+}
+.card-block{
+  text-align: center;
+}
+.carousel-item > img{
+  width: 730px;
+  height: 480px;
+}
+.vendeur{
+  margin-top: 40px;
+  margin-bottom: 30px;
+  img{
+    width: 60px;
+    height: 60px;
+  }
+}
+.description{
+  margin-top: 40px;
+}
+footer{
+  background-color: #3C3D41;
+  text-align: center;
+  color: white;
+  margin-top: 100px;
+  bottom: 0;
+  position: relative;
+  width: 100%;
+  h3{
+    line-height: 5;
+    margin: 0;
+  }
+}
+
+.connecmodal{
+  cursor:pointer;
+}
+
+.modal-footer{
+  border-top: 0px;
+}

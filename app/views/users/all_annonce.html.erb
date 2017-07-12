@@ -2,6 +2,7 @@
 
 <div class ="container">
 <div class ="row">
+  <% if @user.annonces %>
     <% @user.annonces.reverse.each do |annonce| %>
       <div class="card-deck col-sm-12 col-xs-12 col-md-4 col-lg-4" style="margin-bottom:20px;">
         <div class="p-2 card ">
@@ -15,5 +16,9 @@
         </div>
       </div>
     <% end %>
+    <% else %>
+    <p> Pas encore d'annonce !</p>
+  <% end %>
+
 </div>
 </div>

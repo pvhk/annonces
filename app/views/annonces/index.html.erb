@@ -9,11 +9,11 @@
         <div class="p-2 card ">
 
 
-            <%= image_tag annonce.picture_url, class: "card-img-top" %>
+            <%= image_tag annonce.picture_url, class: "card-img-top imgindex"%>
           <div class="card-block">
             <h2 class="card-title"><%=annonce.name%></h2>
             <p class="card-text"><%=annonce.description%></p>
-            <p class="card-text"><b><%=annonce.prix%></b><p>
+            <p class="card-text"><b><%=annonce.prix%> €</b><p>
             <a href="<%=annonce_path(annonce.id)%>" class="btn btn-primary">Voir l'annonce</a>
           </div>
         </div>

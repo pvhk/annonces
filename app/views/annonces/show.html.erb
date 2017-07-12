@@ -1,26 +1,44 @@
 <a href="<%=annonces_path%>" class="btn btn-primary">Retour</a>
 <% if current_user %>
-<% if current_user.id == @annonce.user.id %>
-<a href="<%=edit_annonce_path%>" class="btn btn-info">Editer</a>
-<a href="<%= annonce_path(@annonce.id) %>" class="btn btn-danger" data-confirm="etes vous sur ? " data-method="DELETE">Supprimer</a>
-<% end %>
+  <% if current_user.id == @annonce.user.id %>
+    <a href="<%=edit_annonce_path%>" class="btn btn-info">Editer</a>
+    <a href="<%= annonce_path(@annonce.id) %>" class="btn btn-danger" data-confirm="etes vous sur ? " data-method="DELETE">Supprimer</a>
+  <% end %>
 <% end %>
 
-<h1><%= @annonce.name %></h1>
-<p>
-  <b><%= @annonce.user.username %></b>
-</p>
-<% if @annonce.user.avatar %>
-<div class="img_profil">
-  <%= image_tag @annonce.user.avatar_url %>
+
+    <div class="vendeur">
+      <%= image_tag @annonce.user.avatar_url, :class =>"rounded"%>
+      <b><%= @annonce.user.username %></b>
+    </div>
+<div class="row">
+  <div class="desc col-lg-4">
+    <h2 class="titleannonceshow"><b><%= @annonce.name%></b></h2></br>
+    <h4><b>Prix :<%= @annonce.prix %> €</b></h4>
+    <p class="description"><b>Description : </b></br><%= @annonce.description %></p>
+
+  </div>
+  <% if @annonce.picture %>
+  <div id="carouselExampleControls" class="carousel slide col-lg-8" data-ride="carousel">
+  <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+      <%= image_tag(@annonce.picture_url, :class =>"d-block img-fluid")  %>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag(@annonce.picture_url, :class =>"d-block img-fluid")  %>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag(@annonce.picture_url, :class =>"d-block img-fluid")  %>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  </div>
+  <% end %>
 </div>
-
-<% end %>
-
-<% if @annonce.picture %>
-<div class="card-img-top">
-  <%= image_tag @annonce.picture_url %>
-</div>
-<% end %>
-<p><%= @annonce.description %></p>
-<p><%= @annonce.prix %></p>
