@@ -1,0 +1,13 @@
+<h2><%=@user.username %></h2></br>
+<div class="profilpicture">
+<%= image_tag @user.avatar_url, :class =>"rounded"%>
+</div></br>
+
+<button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="<%=@user.email%>">
+  Voir le mail</button>
+
+
+<script>
+$(function () {
+    $('[data-toggle="popover"]').popover()
+})</script>

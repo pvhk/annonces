@@ -46,6 +46,10 @@
 
    end
 
+   def show
+     @user = User.find(params[:id])
+   end
+
    def all_annonce
      @user = current_user
      @annonces = @user.annonces

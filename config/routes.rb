@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy', as: :destroy_session
 
   resources :sessions, only: [:new, :create]
-  resources :users, only: [:new, :create] do
+  resources :users, only: [:new, :create, :show] do
       member do
         get 'confirm'
       end

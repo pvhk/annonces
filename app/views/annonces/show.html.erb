@@ -9,7 +9,9 @@
 
     <div class="vendeur">
       <%= image_tag @annonce.user.avatar_url, :class =>"rounded"%>
-      <b><%= @annonce.user.username %></b>
+      <a href="<%=user_path(@annonce.user.id)%>"><b><%= @annonce.user.username %></b></a>
+      <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="<%=@annonce.user.email%>">
+        Voir le mail</button>
     </div>
 <div class="row">
   <div class="desc col-lg-4">
@@ -42,3 +44,7 @@
   </div>
   <% end %>
 </div>
+
+<script>$(function () {
+    $('[data-toggle="popover"]').popover()
+})</script>

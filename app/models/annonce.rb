@@ -19,8 +19,6 @@ class Annonce < ApplicationRecord
         end
     end
 
-
-
   def picture_url
     '/' + [
       self.class.name.downcase.pluralize,
