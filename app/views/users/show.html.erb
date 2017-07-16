@@ -6,6 +6,31 @@
 <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="<%=@user.email%>">
   Voir le mail</button>
 
+  <p>
+    <%= @user.description %>
+  </p></br></br>
+
+  <div class="container">
+    <h3>Ses services :</h3>
+    <div class="row">
+    <% @user.annonces.reverse.each do |annonce| %>
+      <div class="card-deck col-sm-12 col-xs-12 col-md-4 col-lg-4" style="margin-bottom:20px;">
+        <div class="p-2 card ">
+          <%= image_tag annonce.picture_url, class: "card-img-top" %>
+          <div class="card-block">
+            <h2 class="card-title"><%=annonce.name%></h2>
+            <p class="card-text"><%=annonce.description%></p>
+            <p class="card-text">
+              <b><%=annonce.prix%></b>
+              <p>
+                <a href="<%=annonce_path(annonce.id)%>" class="btn btn-primary">Voir l'annonce</a>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
 
 <script>
 $(function () {

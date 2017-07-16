@@ -54,5 +54,3 @@ production:
   database: db46et1gjkdkfg
   username: cftslqfjcoxgni
   password: f4ba96e561255a427965c4d13c4760760e2b3928df7b0cce866fa76349536323
-  url: postgres://cftslqfjcoxgni:f4ba96e561255a427965c4d13c4760760e2b3928df7b0cce866fa76349536323@ec2-107-22-250-33.compute-1.amazonaws.com:5432/db46et1gjkdkfgHeroku CLI
-heroku pg:psql postgresql-slippery-32970 --app premierprojet

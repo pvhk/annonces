@@ -4,8 +4,8 @@ class AnnoncesController < ApplicationController
   # GET /annonces
   # GET /annonces.json
   skip_before_action :only_signed_in, only: [:index, :show]
-  def index
 
+  def index
     @annonces = Annonce.all
   end
 
@@ -71,6 +71,6 @@ class AnnoncesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def annonce_params
-      params.require(:annonce).permit(:name,:description,:prix, :picture)
+      params.require(:annonce).permit(:name,:description,:prix, :picture_file, :category_id, :game_id)
     end
 end

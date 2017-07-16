@@ -3,13 +3,23 @@
     <div class="alert alert-danger">
         <%@annonce.errors.full_messages.each do |message|%>
         <li><%= message %></li>
-<% end %>
+    <% end %>
 </div>
 <% end %>
 <%= form_for @annonce do |f|%>
     <div class="form-group">
         <label>Titre de l'article </label>
         <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <label>Selectionner un jeux : </label></br>
+      <%= f.collection_select:game_id, Game.order(:name),:id,:name,include_blank: false %>
+    </div>
+
+    <div class="form-group">
+      <label>Selectionner une catégorie : </label></br>
+      <%= f.collection_select:category_id, Category.order(:name),:id,:name,include_blank: false %>
     </div>
 
     <div class="form-group">
@@ -32,4 +42,5 @@
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Modifier l'annonce</button>
     </div>
+    <a href="<%= annonce_path(@annonce.id) %>" class="btn btn-danger" data-confirm="etes vous sur ? " data-method="DELETE">Supprimer</a>
 <% end %>

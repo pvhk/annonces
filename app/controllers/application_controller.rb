@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   def only_signed_in
     if !current_user
-      redirect_to new_user_path, danger: "Pour créer une annonce, il faut etre connécté "
+      redirect_to new_user_path, danger: "Pour créer un service, il faut avoir un compte "
     end
   end
 

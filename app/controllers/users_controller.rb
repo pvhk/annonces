@@ -37,9 +37,9 @@
 
    def update
      @user = current_user
-     user_params = params.require(:user).permit(:username, :firstname, :lastname, :avatar_file, :email)
+     user_params = params.require(:user).permit(:username, :firstname, :lastname, :avatar_file, :email, :description)
      if @user.update(user_params)
-       redirect_to profil_path, success: "Votre compte à été bien mit à jour"
+       redirect_to profil_path, success: "Votre compte à été bien mis à jour"
      else
        render :edit
      end

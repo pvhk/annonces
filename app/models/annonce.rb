@@ -1,5 +1,8 @@
 class Annonce < ApplicationRecord
     belongs_to :user
+    belongs_to :category
+    belongs_to :game
+
     attr_accessor :picture_file
     validate :validation_method
     validates :prix,presence: true, format: {with: /([0-9])\w+/}
@@ -49,5 +52,9 @@ class Annonce < ApplicationRecord
       FileUtils.mkdir_p(dir) unless Dir.exist?(dir)
       FileUtils.cp(picture_file.path, path)
     end
+  end
+
+  def picture_destroy
+    picture_path.delete
   end
 end

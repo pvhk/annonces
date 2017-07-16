@@ -19,6 +19,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session.destroy
-    redirect_to new_session_path, success:'Vous etes maintenant déconnécté'
+    redirect_to annonces_path, success:'Vous etes maintenant déconnécté'
   end
 end
