@@ -3,12 +3,14 @@ class Annonce < ApplicationRecord
     belongs_to :category
     belongs_to :game
 
+    has_many :options
+    accepts_nested_attributes_for :options
+
     attr_accessor :picture_file
     validate :validation_method
-    validates :prix,presence: true, format: {with: /([0-9])\w+/}
 
     after_save :picture_after_upload
-    after_destroy :picture_destroy
+    before_destroy :picture_destroy
     before_save :picture_before_upload
 
     validates :picture_file, file: {ext: [:jpg, :png], allow_blank: true}

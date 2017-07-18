@@ -17,6 +17,7 @@ class AnnoncesController < ApplicationController
   # GET /annonces/new
   def new
     @annonce = Annonce.new
+    @annonce.options.build
   end
 
   # GET /annonces/1/edit
@@ -28,6 +29,7 @@ class AnnoncesController < ApplicationController
   def create
     @annonce = Annonce.new(annonce_params)
     @annonce.user_id = current_user.id
+
     respond_to do |format|
       if @annonce.save
         format.html { redirect_to @annonce, notice: 'Annonce was successfully created.' }
@@ -71,6 +73,6 @@ class AnnoncesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def annonce_params
-      params.require(:annonce).permit(:name,:description,:prix, :picture_file, :category_id, :game_id)
+      params.require(:annonce).permit(:name,:description,:prix, :picture_file, :category_id, :game_id, options_attributes: [:annonce_id, :name, :price])
     end
 end

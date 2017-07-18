@@ -22,14 +22,28 @@
 </div>
 
 <div class="form-group">
-  <label>Description</label>
+  <label>Description :</label>
   <%= f.text_area :description, class: 'form-control' %>
 </div>
-
 <div class="form-group">
-  <label>Prix</label>
-  <%= f.text_field :prix, class: 'form-control' %>
+  <label>Les options :</label>
+<div class="row">
+  <%= f.fields_for :options do |option| %>
+    <%= option.text_field :name, class: 'form-control col-md-6',placeholder: 'Intitulé de votre option', style: 'margin-bottom:20px;' %>
+    <%= option.text_field :price, class: 'form-control col-md-2',placeholder: 'Le prix (max : 50 €)', style: 'margin-bottom:20px;' %>
+  <% end %>
+
+  <%= f.fields_for :options do |option| %>
+    <%= option.text_field :name, class: 'form-control col-md-6',placeholder: 'Intitulé de votre option', style: 'margin-bottom:20px;' %>
+    <%= option.text_field :price, class: 'form-control col-md-2',placeholder: 'Le prix (max : 50 €)', style: 'margin-bottom:20px;' %>
+  <% end %>
+  <%= f.fields_for :options do |option| %>
+    <%= option.text_field :name, class: 'form-control col-md-6',placeholder: 'Intitulé de votre option', style: 'margin-bottom:20px;' %>
+    <%= option.text_field :price, class: 'form-control col-md-2',placeholder: 'Le prix (max : 50 €)', style: 'margin-bottom:20px;' %>
+  <% end %>
 </div>
+</div>
+
 
 <div class="form-group">
   <%=	f.label :picture_file, "Ajouter une image à votre annonce :", class: 'col-md-4 control label' %>

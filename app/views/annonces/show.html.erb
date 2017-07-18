@@ -1,6 +1,4 @@
 <div class="row">
-
-
   <% if @annonce.picture %>
   <div id="carouselExampleControls" class="carousel slide col-lg-7" data-ride="carousel">
     <div class="carousel-inner" role="listbox">
@@ -42,18 +40,16 @@
       <b><%= @annonce.name%></b>
     </h2>
   </br>
-  <h4>
-    <b>Prix :<%= @annonce.prix %>
-      €</b>
-  </h4>
   <p class="description">
     <b>Description :</b>
   </br><%= @annonce.description %></p>
+  <ul>
+  <%= render(partial: 'options/option', collection: @annonce.options) %>
+</ul>
+<button class="btn btn-success">Acheter</button>
 </div>
-
 <% end %>
 </div>
-
 <script>
 $(function () {
   $('[data-toggle="popover"]').popover()
